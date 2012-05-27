@@ -1,0 +1,14 @@
+%body.pages{:'data-flickr'=> @flickr_key,:'data-500px'=> @_500px_key,:'data-soundcloud'=> @soundcloud_key}
+  = render "chromeframe" 
+  = render "header"
+  .container
+    #main
+      = render "flashes"
+      .row-fluid
+        .span4 
+          %img.flickr{src:""}
+        .span4
+        .span4
+          %img.500px{src:""}
+    = render "footer"
+  = render "javascripts"
