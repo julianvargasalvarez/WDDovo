@@ -8,11 +8,16 @@ gem 'haml', '3.1.4'
 gem 'heroku'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'  #activeadmin needs it
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'uglifier'
+  gem 'coffee-rails'
+  gem 'compass-rails'
+  gem 'compass-h5bp'
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
+gem 'html5-rails'
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'

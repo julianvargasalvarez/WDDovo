@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>WDDovo</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<%# http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither %>
+<%= html_tag :class => "no-js", :lang => "en" %>
+  <%= render "head" %>
 
-<%= yield %>
+  <body class="pages">
+    <%= render "chromeframe" %>
+    <%= render "header" %>
 
-</body>
+    <div id="main" role="main">
+      <%= render "flashes" %>
+      <%= yield %>
+    </div>
+
+    <%= render "footer" %>
+
+    <%# Javascript at the bottom for fast page loading %>
+    <%= render "javascripts" %>
+  </body>
 </html>
