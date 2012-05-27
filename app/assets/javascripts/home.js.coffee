@@ -4,9 +4,10 @@ $ ->
 loadBackground = ->
   imageURL=loadFlickrimage()
   image500=load500pximage()
-
+  
   ($ '.flickr').attr 'src',imageURL
   ($ '.500px').attr 'src' ,image500
+
 
 loadFlickrimage = ->
   api_key = ($ 'body').data("flickr")
