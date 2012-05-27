@@ -22,7 +22,9 @@ loadFlickrimage = ->
     success: (response, textStatus, jqXHR) ->
       console.log response
       photo =  response.photos.photo[0]
-  "http://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}_z.jpg"
+  a="http://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}_z.jpg"
+  console.log a
+  a
 
 load500pximage = ->
   api_key = ($ 'body').data("500px")
