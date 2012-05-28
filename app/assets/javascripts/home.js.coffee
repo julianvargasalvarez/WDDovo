@@ -28,7 +28,7 @@ load500pximage = ->
   $.ajax
     async: false
     url: "https://api.500px.com/v1/photos/search?consumer_key=#{api_key}&term=black&tag=white"
-    dataType: 'json'
+    dataType: 'jsonp'
     type: 'GET'
     success: (response, textStatus, jqXHR) ->
       console.log response
