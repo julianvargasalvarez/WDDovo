@@ -3,6 +3,7 @@ $ ->
 
 loadBackground = ->
   imageURL=loadFlickrimage()
+  ($ '.flickr').attr 'src',imageURL
   image500=load500pximage()
   ($ '.flickr').attr 'src',imageURL
   ($ '.500px').attr 'src' ,image500
