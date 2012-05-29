@@ -4,10 +4,10 @@ $ ->
 loadBackground = ->
   imageURL=loadFlickrimage()
   ($ '.flickr').attr 'src',imageURL
-  image500=load500pximage()
+  #image500=load500pximage()
   ($ '.flickr').attr 'src',imageURL
-  ($ '.500px').attr 'src' ,image500
-
+  #($ '.500px').attr 'src' ,image500
+  load500pximage()
 
 loadFlickrimage = ->
   api_key = ($ 'body').data("flickr")
@@ -26,12 +26,16 @@ loadFlickrimage = ->
 load500pximage = ->
   api_key = ($ 'body').data("500px")
   photo = null
+  url = "https://api.500px.com/v1/photos?feature=popular&consumer_key=#{api_key}&rpp=7"
   $.ajax
     async: false
-    url: "https://api.500px.com/v1/photos/search?consumer_key=#{api_key}&term=black&tag=white"
+    url: url
     dataType: 'jsonp'
     type: 'GET'
     success: (response, textStatus, jqXHR) ->
       console.log response
+    error: (jqXHR, textStatus, errorThrown) ->
+      console.log jqXHR,textStatus,errorThrown
+
       #photo =  response.photos[0]
   #photo.image_url
