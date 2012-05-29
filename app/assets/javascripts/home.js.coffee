@@ -30,7 +30,7 @@ load500pximage = ->
   $.ajax
     async: false
     url: url
-    dataType: 'jsonp'
+    dataType: 'json'
     type: 'GET'
     success: (response, textStatus, jqXHR) ->
       console.log response
