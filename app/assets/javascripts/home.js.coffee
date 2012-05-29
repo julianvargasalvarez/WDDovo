@@ -27,15 +27,5 @@ load500pximage = ->
   api_key = ($ 'body').data("500px")
   photo = null
   url = "https://api.500px.com/v1/photos?feature=popular&consumer_key=VyHAVehyT6HHXuDLvnC3AiHRjFZFKajOIYKmBHMW"
-  $.ajax
-    async: false
-    url: url
-    dataType: 'json'
-    type: 'GET'
-    success: (response, textStatus, jqXHR) ->
-      console.log response
-    error: (jqXHR, textStatus, errorThrown) ->
-      console.log jqXHR,textStatus,errorThrown
-
-      #photo =  response.photos[0]
-  #photo.image_url
+  $.getJSON url, (data)->
+    console.log data
