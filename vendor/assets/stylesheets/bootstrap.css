@@ -53,7 +53,7 @@ a:active {
 sub,
 sup {
   position: relative;
-  font-size: 75%;
+  font-size: 100%;
   line-height: 0;
   vertical-align: baseline;
 }
@@ -67,7 +67,7 @@ sub {
 }
 
 img {
-  max-width: 100%;
+  max-width: 75%;
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;

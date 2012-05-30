@@ -4,10 +4,11 @@ $ ->
 loadBackground = ->
   imageURL=loadFlickrimage()
   ($ '.flickr').attr 'src',imageURL
+  sounCloudUrl=loadSCsound()
   #image500=load500pximage()
   ($ '.flickr').attr 'src',imageURL
   #($ '.500px').attr 'src' ,image500
-  load500pximage()
+  #load500pximage()
 
 loadFlickrimage = ->
   api_key = ($ 'body').data("flickr")
@@ -23,9 +24,19 @@ loadFlickrimage = ->
   a="http://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}_z.jpg"
   a
 
-load500pximage = ->
-  api_key = ($ 'body').data("500px")
-  photo = null
-  url = "https://api.500px.com/v1/photos?feature=popular&consumer_key=VyHAVehyT6HHXuDLvnC3AiHRjFZFKajOIYKmBHMW"
-  $.getJSON url, (data)->
-    console.log data
+#load500pximage = ->
+  #api_key = ($ 'body').data("500px")
+  #photo = null
+  #url = "https://api.500px.com/v1/photos?feature=popular&consumer_key=VyHAVehyT6HHXuDLvnC3AiHRjFZFKajOIYKmBHMW"
+  #$.getJSON url, (data)->
+    #console.log data
+
+loadSCsound = ->
+  api_key = ($ 'body').data("soundcloud")
+  console.log api_key
+  SC.initialize
+    client_id: "#{api_key}"
+    redirect_uri: "http://wddovo.herokuapp.com/"
+  track_url = 'http://soundcloud.com/forss/flickermood'
+  SC.oEmbed track_url,{ auto_play: true }, (oembed) ->
+    console.log oembed
